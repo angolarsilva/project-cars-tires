@@ -2,21 +2,27 @@ package tire;
 
 public class Tire /*implements Comparable<Tire>*/{
 
+    private static int cont = 1;
     private int id;
     private double width;
     private double weight;
+    private String toCheck;
     private String mark;
-
 
     public Tire() {
     }
 
+    public Tire(String toCheck ) {
+        this.toCheck = toCheck;
+    }
 
-    public Tire(int id, double width, double weight, String mark) {
-        this.id = id;
+    public Tire(double width, double weight, String toCheck, String mark) {
+        this.id = cont;
         this.width = width;
         this.weight = weight;
+        this.toCheck = toCheck;
         this.mark = mark;
+        Tire.cont++;
     }
 
 
@@ -59,20 +65,26 @@ public class Tire /*implements Comparable<Tire>*/{
         this.mark = mark;
     }
 
+    public String getToCheck() {
+        return toCheck;
+    }
 
-
+    public void setToCheck(String toCheck) {
+        this.toCheck = toCheck;
+    }
 
     @Override
     public String toString() {
-        return "Tire [id=" + id + ", width=" + width + ", weight=" + weight + ", mark=" + mark + "]";
+        return "Tire [id >>> " + id + ", width >>> " + width + ", weight >>> " + weight + ", toCheck >>> " + toCheck + ", mark >>> " + mark
+                + "]";
     }
 
-
-    // @Override
-    // public int compareTo(Tire o) {
-        
-    //     if ( )
-
-    // } 
+    /**
+     * @return
+     */
+    public String toChecks() {
+        return "Tire [toCheck >>> " + toCheck +  
+               " ]";
+    }
 
 }
